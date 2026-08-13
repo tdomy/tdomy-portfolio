@@ -1,0 +1,2 @@
+import { siteConfig } from "@/data/site";
+export function Hero() { return <section className="hero" aria-labelledby="hero-title"><div><p className="eyebrow">{siteConfig.role} · Japan</p><h1 id="hero-title">Designing systems<br/><span>from API to operation.</span></h1></div><div className="hero-bottom"><p>{siteConfig.description}</p><a className="text-link" href="#work">Selected work <span aria-hidden="true">↓</span></a></div></section> }

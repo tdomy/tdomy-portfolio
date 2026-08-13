@@ -1,0 +1,2 @@
+import { navigation, siteConfig } from "@/data/site";
+export function Header() { return <header className="site-header"><a className="wordmark" href="#top" aria-label="トップへ">{siteConfig.name}<span>.</span></a><nav aria-label="メインナビゲーション"><ul>{navigation.map((item) => <li key={item.href}><a href={item.href}>{item.label}</a></li>)}</ul></nav><a className="availability" href="#contact"><span aria-hidden="true" />Available</a></header> }
