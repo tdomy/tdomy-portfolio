@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tdomy Portfolio
 
-## Getting Started
+Next.js App RouterとTypeScriptで構築したエンジニア向けポートフォリオです。
 
-First, run the development server:
+## ローカル開発
+
+依存関係をインストールし、開発サーバーを起動します。
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`APP_URL`が未設定の開発環境では、`http://localhost:3000`を使用します。明示的に設定する場合は、サンプルをコピーして編集してください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 環境変数
 
-## Learn More
+| 変数 | 必須 | 説明 |
+| --- | --- | --- |
+| `APP_URL` | 本番環境のみ | サイトの公開URL。パスを含まない`https://example.com`形式で指定します。 |
 
-To learn more about Next.js, take a look at the following resources:
+`APP_URL`はsitemap、robots、metadata、JSON-LDの基準URLとして使われます。ブラウザへ公開する必要がないため、`NEXT_PUBLIC_`は付けません。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Vercelへのデプロイ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+VercelでGitHubリポジトリをImportし、プロジェクトの`Settings` → `Environment Variables`から`APP_URL`を追加します。
 
-## Deploy on Vercel
+```text
+APP_URL=https://your-domain.example
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+独自ドメインを使わない場合は、Vercelが発行した本番用の`vercel.app` URLを設定してください。Production、Preview、Developmentで異なるURLを使う場合は、環境ごとに値を登録します。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 検証
+
+```bash
+pnpm lint
+APP_URL=https://example.com pnpm build
+```

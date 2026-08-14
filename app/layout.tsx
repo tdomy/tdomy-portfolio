@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { siteConfig } from "@/data/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(siteConfig.url),
   title: { default: "Tdomy — Software Engineer", template: "%s — Tdomy" },
   description: "バックエンドを軸に、フロントエンド、クラウド、品質改善まで横断するSoftware Engineer / Tech Leadのポートフォリオ。",
   openGraph: { title: "Tdomy — Software Engineer", description: "Backend depth. Full-stack perspective.", type: "website", locale: "ja_JP" },
