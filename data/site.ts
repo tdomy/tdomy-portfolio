@@ -8,7 +8,6 @@ export const siteConfig = {
     "バックエンドを軸に、フロントエンド、クラウド、品質改善まで横断してプロダクトを設計・開発しています。",
   url: getAppUrl(),
   github: "https://github.com/tdomy",
-  x: "https://x.com/domy_es",
 } as const;
 export const navigation = [
   { label: "Work", href: "#work" },

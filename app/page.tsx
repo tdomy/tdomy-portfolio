@@ -14,7 +14,7 @@ export default function Home() {
     alternateName: siteConfig.name,
     jobTitle: siteConfig.role,
     url: siteConfig.url,
-    sameAs: [siteConfig.github, siteConfig.x],
+    sameAs: [siteConfig.github],
   };
   return (
     <>

@@ -39,3 +39,23 @@ export function getAppUrl(): string {
 
   throw new Error("APP_URL is required in production.");
 }
+
+export type ContactEnv = {
+  resendApiKey: string;
+  toEmail: string;
+  fromEmail: string;
+};
+
+export function getContactEnv(): ContactEnv {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const toEmail = process.env.CONTACT_TO_EMAIL;
+  const fromEmail = process.env.CONTACT_FROM_EMAIL;
+
+  if (!resendApiKey || !toEmail || !fromEmail) {
+    throw new Error(
+      "RESEND_API_KEY, CONTACT_TO_EMAIL and CONTACT_FROM_EMAIL are required to send contact messages.",
+    );
+  }
+
+  return { resendApiKey, toEmail, fromEmail };
+}
