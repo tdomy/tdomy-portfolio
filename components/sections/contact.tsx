@@ -1,4 +1,6 @@
+import { contactContent } from "@/data/contact";
 import { siteConfig } from "@/data/site";
+import { ContactForm } from "@/components/sections/contact-form";
 export function Contact() {
   return (
     <section id="contact" className="contact" aria-labelledby="contact-title">
@@ -8,13 +10,11 @@ export function Contact() {
         <br />
         useful and lasting.
       </h2>
-      <p>お問い合わせはXでお願いします。</p>
-      <div>
+      <p>{contactContent.lead}</p>
+      <ContactForm />
+      <div className="contact-links">
         <a href={siteConfig.github} target="_blank" rel="noreferrer">
           GitHub ↗
-        </a>
-        <a href={siteConfig.x} target="_blank" rel="noreferrer">
-          X ↗
         </a>
       </div>
     </section>

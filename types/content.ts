@@ -25,3 +25,12 @@ export type Experience = {
   company: string;
   description: string;
 };
+
+export type ContactField = "name" | "email" | "message";
+
+export type ContactFormState = {
+  status: "idle" | "success" | "error";
+  message: string;
+  fieldErrors: Partial<Record<ContactField, string>>;
+  values: Partial<Record<ContactField, string>>;
+};
