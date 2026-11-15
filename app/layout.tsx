@@ -16,9 +16,19 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: { default: "Tdomy — Software Engineer", template: "%s — Tdomy" },
-  description: "バックエンドを軸に、フロントエンド、クラウド、品質改善まで横断するSoftware Engineer / Tech Leadのポートフォリオ。",
-  openGraph: { title: "Tdomy — Software Engineer", description: "Backend depth. Full-stack perspective.", type: "website", locale: "ja_JP" },
-  twitter: { card: "summary_large_image", title: "Tdomy — Software Engineer", description: "Backend depth. Full-stack perspective." },
+  description:
+    "バックエンドを軸に、フロントエンド、クラウド、品質改善まで横断するSoftware Engineer / Tech Leadのポートフォリオ。",
+  openGraph: {
+    title: "Tdomy — Software Engineer",
+    description: "Backend depth. Full-stack perspective.",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tdomy — Software Engineer",
+    description: "Backend depth. Full-stack perspective.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
