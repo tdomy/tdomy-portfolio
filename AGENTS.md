@@ -30,23 +30,25 @@ Next.js App Router と TypeScript で構築したエンジニア向けポート�
 ```bash
 pnpm dev                                  # 開発サーバー
 pnpm lint                                 # ESLint
+pnpm format                               # Prettier で整形
+pnpm format:check                         # Prettier の整形チェック
 APP_URL=https://example.com pnpm build    # 本番ビルド
 ```
 
-自動テストはない。変更後は `pnpm lint` と `APP_URL=https://example.com pnpm build` が通ることを確認する。
+自動テストはない。変更後は `pnpm format:check`、`pnpm lint`、 `APP_URL=https://example.com pnpm build` が通ることを確認する。
 
 ## ディレクトリ構成
 
-| パス | 役割 |
-| --- | --- |
-| `app/` | ページ、レイアウト、metadata、`robots.ts`、`sitemap.ts`、OG画像、`globals.css` |
-| `components/layout/` | ヘッダー、フッター |
-| `components/sections/` | トップページの各セクション（Hero、Projects、About、Experience、Contact） |
-| `components/ui/` | 汎用UI部品 |
-| `data/` | 表示するコンテンツ（サイト情報、プロジェクト、経歴、スキル） |
-| `types/content.ts` | コンテンツの型定義 |
-| `lib/env.ts` | 環境変数の読み込みと検証（`server-only`） |
-| `public/` | 画像などの静的ファイル |
+| パス                   | 役割                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| `app/`                 | ページ、レイアウト、metadata、`robots.ts`、`sitemap.ts`、OG画像、`globals.css` |
+| `components/layout/`   | ヘッダー、フッター                                                             |
+| `components/sections/` | トップページの各セクション（Hero、Projects、About、Experience、Contact）       |
+| `components/ui/`       | 汎用UI部品                                                                     |
+| `data/`                | 表示するコンテンツ（サイト情報、プロジェクト、経歴、スキル）                   |
+| `types/content.ts`     | コンテンツの型定義                                                             |
+| `lib/env.ts`           | 環境変数の読み込みと検証（`server-only`）                                      |
+| `public/`              | 画像などの静的ファイル                                                         |
 
 import には `@/` エイリアスを使う。
 
